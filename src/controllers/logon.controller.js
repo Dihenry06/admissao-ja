@@ -13,7 +13,7 @@ async function login(req, res) {
         const user = await UserSchema.findOne({ email });
 
         if (!user) return res.status(401).json({ message: 'email ou senha invalidos' });
-
+        
         const compare = await passwordUtils.comparePassword(password, user.password);
 
         if (!compare) return res.status(401).json({ message: 'email ou senha invalido' });
@@ -22,7 +22,7 @@ async function login(req, res) {
             expiresIn: 1800, // 5 hours in seconds
         });
 
-        return res.status(200).json(token);
+        return res.status(200).json({token});
         
     } catch (error) {
         return res.status(401).json({ message: 'Falha ao fazer o login' });

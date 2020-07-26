@@ -1,6 +1,8 @@
 const routes = require('express').Router();
 const UserController = require('../controllers/user.controller');
 
-routes.post('/', UserController.create);
+const userMiddlewares = require('../middlewares/users.middlewares');
 
-module.exports = routes
+routes.post('/', userMiddlewares.userExists, UserController.create);
+
+module.exports = routes;

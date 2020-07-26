@@ -15,12 +15,12 @@ async function create(req, res) {
             password: hash
         });
 
-        if (!response) return res.status(400).json({ message: 'Falha ao criar usuario' });
+        if (!response) return res.status(400).json({ message: 'Falha ao cadastrar usuario' });
 
-        return res.status(200).json({ message: 'user created' });
+        return res.status(200).json({ message: 'Usuario cadastrado com sucesso' });
 
     } catch (error) {
-        return res.status(500).json({ message: 'Falha ao criar usuario' });
+        return res.status(500).json({ message: 'Falha ao cadastrar usuario' });
     }
 }
 
