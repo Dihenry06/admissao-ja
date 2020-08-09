@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const requireDir = require('require-dir');
 const { errors } = require('celebrate');
+require('dotenv').config();
 
 require('./databases/connection');
 requireDir('./models');
