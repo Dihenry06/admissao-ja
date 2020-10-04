@@ -5,6 +5,11 @@ const userMiddlewares = require('../middlewares/users.middlewares');
 
 const validatorsUser = require('../validators/user.validators');
 
-routes.post('/', validatorsUser.validatorCreateUser, userMiddlewares.userExists, UserController.create);
+routes.post(
+  '/',
+  validatorsUser.validatorCreateUser,
+  userMiddlewares.userExists,
+  UserController.create
+);
 
 module.exports = routes;

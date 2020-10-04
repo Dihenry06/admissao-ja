@@ -5,4 +5,4 @@ const validatorsLogon = require('../validators/logon.validators');
 
 routes.post('/', validatorsLogon, LogonController.login);
 
-module.exports = routes
+module.exports = routes;

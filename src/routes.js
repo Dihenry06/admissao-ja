@@ -6,4 +6,4 @@ const logonRoutes = require('./routes/logon.routes');
 routes.use('/user', userRoutes);
 routes.use('/login', logonRoutes);
 
-module.exports = routes
+module.exports = routes;
